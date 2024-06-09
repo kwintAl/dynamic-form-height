@@ -3,7 +3,7 @@
     <!-- DynamicCard component for cards in data value -->
     <div :key="index" class="col" v-for="(card, index) in cards">
       <!-- title-height is the headerHeight -->
-      <DynamicCard :key="index" :title="card.title" @heightChange="updateTitleHeight" :id="card.id" ref="cards"
+      <DynamicCard :key="index" :title="card.title" @heightChange="updateTitleHeight" :id="card.id"
                    :title-height="headerHeight"/>
     </div>
   </div>
@@ -37,7 +37,7 @@ export default {
     updateTitleHeight(id, h) {
       console.log(id, h);
 
-      if(Object.entries(this.cardTitleSizes).length === 0) {
+      if (Object.entries(this.cardTitleSizes).length === 0) {
         console.log('resetting cardTitleSizes');
         this.$data.cards.forEach(card => {
           this.cardTitleSizes[card.id] = undefined;
